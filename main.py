@@ -75,7 +75,11 @@ def listNums(number):
 
 @app.route("/<int:number>/odd", methods=['GET'])
 def listOddNums(number):
-    odds = [i for i in range(1, number + 1) if i % 2 != 0]
+    # v1
+    # odds = [i for i in range(1, number + 1) if i % 2 != 0]
+    
+    # v2
+    odds = range(1, number + 1, 2)
 
     page, per_page, offset = get_page_args(page_parameter='page', per_page_parameter='per_page', per_page=18)
     partition = odds[offset: offset + per_page]
@@ -85,7 +89,11 @@ def listOddNums(number):
 
 @app.route("/<int:number>/even", methods=['GET'])
 def listEvenNums(number):
-    evens = [i for i in range(1, number + 1) if i % 2 == 0]
+    # v1
+    # evens = [i for i in range(1, number + 1) if i % 2 == 0]
+    
+    # v2
+    evens = range(2, number + 1, 2)
     
     page, per_page, offset = get_page_args(page_parameter='page', per_page_parameter='per_page', per_page=18)
     partition = evens[offset: offset + per_page]
