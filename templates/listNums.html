@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>List of{{qualifier}}Numbers from 1 to {{number}}</title>
+        <meta name="description" content="List of{{qualifier}}Numbers from 1 to {{number}}">
+        <meta name="author" content="Raghu Selvaraj">
+        <link rel="stylesheet" type="text/css" href="../listNums.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">
+    </head>
+
+    <body>
+        <ul style="list-style-type: none;margin: 0;">
+            {% for number in numbers %}
+                <li>{{number}}</li><br>
+            {% endfor %}
+        </ul>
+        {{ pagination.links }}
+    </body>
+</html>
