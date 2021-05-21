@@ -112,4 +112,4 @@ def listPrimeNums(number):
     return render_template("listNums.html", qualifier=" Prime ", number=number, numbers=partition, page=page, per_page=per_page, pagination=pagination)
 
 if __name__ == "__main__":
-    app.run(port=5000)
+    app.run(host="0.0.0.0", debug=True)
